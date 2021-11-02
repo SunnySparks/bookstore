@@ -4,14 +4,7 @@
 
 > A bookstore app made in React and Redux
 
-![screenshot](./img.png)
-
-Use this app for your math operations
-
-## Live versions
-
-- [Heroku Live version](https://math-magicians-neon.herokuapp.com)
-- [Netlify Live version](https://admiring-lumiere-fc068e.netlify.app/calculator)
+Use this app for saving your prefered b ooks and reading progress
 
 ## Built With
 
@@ -21,7 +14,6 @@ Use this app for your math operations
 
 ## Getting Started
 
-
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
@@ -29,7 +21,7 @@ To get a local copy up and running follow these simple example steps.
 
 
 ### Usage
- Clone the project by typing in your terminal `git clone https://github.com/SunnySparks/Math-Magicians.git`.
+ Clone the project by typing in your terminal `git clone https://github.com/SunnySparks/bookstore.git`.
 
  Change directory `cd` into the just created from the project.
 
@@ -40,7 +32,7 @@ To get a local copy up and running follow these simple example steps.
  Your computer will open the main page where you can add your name and score
  
 ## Run tests
- Clone the project using `git clone https://github.com/SunnySparks/Math-Magicians.git`.
+ Clone the project using `git clone https://github.com/SunnySparks/bookstore.git`.
 
  Run `npx eslint .` for javascript linters.
 
@@ -60,7 +52,7 @@ To get a local copy up and running follow these simple example steps.
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/SunnySparks/Math-Magicians/issues).
+Feel free to check the [issues page](https://github.com/SunnySparks/bookstore.git/issues).
 
 ## Show your support
 
