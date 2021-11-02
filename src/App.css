@@ -3,9 +3,10 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  
+  body {
+    background-color: white;
+  }
 }
-
 
 .App-header {
   background-color: #282c34;
