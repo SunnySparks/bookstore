@@ -2,27 +2,17 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
   Redirect,
 } from 'react-router-dom';
 import Category from './components/Categories';
 import Book from './components/Books';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Book</Link>
-            </li>
-            <li>
-              <Link to="/categories">Categories</Link>
-            </li>
-          </ul>
-        </nav>
-
+        <Navbar />
         <Switch>
           <Route exact path="/">
             <Book />
