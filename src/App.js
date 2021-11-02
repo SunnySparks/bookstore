@@ -3,6 +3,7 @@ import {
   Switch,
   Route,
   Link,
+  Redirect,
 } from 'react-router-dom';
 import Category from './components/Categories';
 import Book from './components/Books';
@@ -29,6 +30,7 @@ function App() {
           <Route path="/Categories">
             <Category />
           </Route>
+          <Redirect from="*" to="/" />
         </Switch>
       </div>
     </Router>

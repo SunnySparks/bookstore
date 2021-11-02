@@ -1,8 +1,7 @@
 import '../App.css';
 import React from 'react';
-import BookForm from './BookForm';
 
-const Book = () => {
+const BookList = () => {
   const bookList = [
     {
       id: 1,
@@ -24,13 +23,6 @@ const Book = () => {
     <div>
       <div>
         <div>
-          <h1>
-            Your book list
-          </h1>
-        </div>
-      </div>
-      <div>
-        <div>
           <ul>
             <div>
               {bookList.map((book) => (
@@ -47,11 +39,8 @@ const Book = () => {
           </ul>
         </div>
       </div>
-      <div>
-        <BookForm />
-      </div>
     </div>
   );
 };
 
-export default Book;
+export default BookList;
