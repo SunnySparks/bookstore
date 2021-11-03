@@ -1,26 +1,25 @@
 import '../App.css';
-import React from 'react';
+import { React, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/books/books';
 
 const BookForm = () => {
   const dispatch = useDispatch();
+  const [bookTitle, setBookTitle] = useState('');
+  const [bookAuthor, setBookAuthor] = useState('');
 
   const handleSubmit = (e) => {
-    const bookTitle = e.target.title.value;
-    const bookAuthor = e.target.author.value;
+    e.preventDefault();
     const id = Date.now();
     dispatch(addBook({ title: bookTitle, author: bookAuthor, id }));
-    e.target.title.value = '';
-    e.target.author.value = '';
   };
 
   return (
     <div>
-      <form onSubmit={(e) => { e.preventDefault(); handleSubmit(e); }}>
-        <input type="text" name="title" placeholder="Add your title" onChange={() => addBook} />
+      <form onSubmit={(e) => { handleSubmit(e); }}>
+        <input type="text" name="bookTitle" value={bookTitle} placeholder="Add your title" onChange={(e) => setBookTitle(e.target.value)} />
         <br />
-        <input type="text" name="author" placeholder="Author's name" onChange={() => addBook} />
+        <input type="text" name="bookAuthor" value={bookAuthor} placeholder="Author's name" onChange={(e) => setBookAuthor(e.target.value)} />
         <input type="submit" value="Submit" />
       </form>
     </div>

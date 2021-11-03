@@ -5,7 +5,6 @@ import BookRemover from './BookRemover';
 
 const BookList = () => {
   const bookStore = useSelector((state) => state.book);
-
   return (
     <div>
       <div>
