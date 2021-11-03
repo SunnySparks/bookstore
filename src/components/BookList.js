@@ -1,37 +1,23 @@
 import '../App.css';
+import { useSelector } from 'react-redux';
 import React from 'react';
+import BookRemover from './BookRemover';
 
 const BookList = () => {
-  const bookList = [
-    {
-      id: 1,
-      title: 'Dune',
-      author: 'Frank Herbert',
-    },
-    {
-      id: 2,
-      title: 'Harry Potter and the Philosopher\'s stone',
-      author: 'JK Rowling',
-    },
-    {
-      id: 3,
-      title: 'Ana Karenina',
-      author: 'León Tolstói',
-    },
-  ];
+  const bookStore = useSelector((state) => state.book);
   return (
     <div>
       <div>
         <div>
           <ul>
             <div>
-              {bookList.map((book) => (
+              {bookStore.map((book) => (
                 <li key={book.id}>
                   <h4>
                     {book.title}
                     By:
                     {book.author}
-                    <button type="button">Remove</button>
+                    <BookRemover bookID={book.id} />
                   </h4>
                 </li>
               ))}
