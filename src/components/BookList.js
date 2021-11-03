@@ -1,31 +1,26 @@
 import '../App.css';
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/books';
+import BookRemover from './BookRemover';
 
 const BookList = () => {
-  const dispatch = useDispatch();
   const bookList = [
     {
-      id: Date.now(),
+      id: 1,
       title: 'Dune',
       author: 'Frank Herbert',
     },
     {
-      id: Date.now(),
+      id: 2,
       title: 'Harry Potter and the Philosopher\'s stone',
       author: 'JK Rowling',
     },
     {
-      id: Date.now(),
+      id: 3,
       title: 'Ana Karenina',
       author: 'León Tolstói',
     },
   ];
 
-  const handleRemove = (id) => {
-    dispatch(removeBook(id));
-  };
   return (
     <div>
       <div>
@@ -38,7 +33,7 @@ const BookList = () => {
                     {book.title}
                     By:
                     {book.author}
-                    <button type="button" onClick={handleRemove(book.id)}>Remove</button>
+                    <BookRemover bookID={book.id} />
                   </h4>
                 </li>
               ))}
