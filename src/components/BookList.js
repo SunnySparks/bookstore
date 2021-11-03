@@ -1,9 +1,14 @@
 import '../App.css';
+import { useSelector } from 'react-redux';
 import React from 'react';
 import BookRemover from './BookRemover';
 
 const BookList = () => {
-  const bookList = [
+  const bookStore = useSelector((store) => store.book);
+  console.log('after', bookStore);
+  console.log(bookStore.title);
+  console.log(bookStore.auth);
+  /* const bookList = [
     {
       id: 1,
       title: 'Dune',
@@ -19,7 +24,7 @@ const BookList = () => {
       title: 'Ana Karenina',
       author: 'León Tolstói',
     },
-  ];
+  ]; */
 
   return (
     <div>
@@ -27,7 +32,7 @@ const BookList = () => {
         <div>
           <ul>
             <div>
-              {bookList.map((book) => (
+              {bookStore.map((book) => (
                 <li key={book.id}>
                   <h4>
                     {book.title}
