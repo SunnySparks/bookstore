@@ -18,9 +18,9 @@ const BookForm = () => {
   return (
     <div>
       <form onSubmit={(e) => { e.preventDefault(); handleSubmit(e); }}>
-        <input type="text" name="title" placeholder="Add your title" onChange={addBook} />
+        <input type="text" name="title" placeholder="Add your title" onChange={() => addBook} />
         <br />
-        <input type="text" name="author" placeholder="Author's name" onChange={addBook} />
+        <input type="text" name="author" placeholder="Author's name" onChange={() => addBook} />
         <input type="submit" value="Submit" />
       </form>
     </div>
