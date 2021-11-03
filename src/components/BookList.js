@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/books';
 
 const BookList = () => {
+  const dispatch = useDispatch();
   const bookList = [
     {
       id: Date.now(),
@@ -21,7 +22,6 @@ const BookList = () => {
       author: 'León Tolstói',
     },
   ];
-  const dispatch = useDispatch();
 
   const handleRemove = (id) => {
     dispatch(removeBook(id));
