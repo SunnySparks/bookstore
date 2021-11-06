@@ -1,26 +1,29 @@
 import React from 'react';
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-// import { removeBook } from '../redux/books/books';
+import { removeBook } from '../redux/books/books';
 import '../App.css';
 
 const BooksList = (props) => {
-  // const dispatch = useDispatch();
-  /* const removeBookFromoStore = (id) => {
-    dispatch(removeBook(id));
-  }; */
+  const dispatch = useDispatch();
   const {
     title, category, Author,
   } = props;
+  const removeBookFromStore = (id) => {
+    dispatch(removeBook(id));
+  };
   return (
     <div className="container row-wrapper border mt-3 p-3">
       <div className="row">
         <div className="col">
-          <span className="category">{category}</span>
+          <h2 className="category">{category}</h2>
           <h3 className="title">{title}</h3>
           <span className="author">{Author}</span>
           <ul className="d-flex p-0 mt-3">
             <li className="author  p-2">Comments</li>
+            <li className="author   border-start p-2">
+              <button type="button" onClick={() => removeBookFromStore(props.id)}>Remove</button>
+            </li>
             <li className="author  border-start p-2">Edit</li>
           </ul>
         </div>
@@ -46,5 +49,5 @@ BooksList.propTypes = {
   title: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
   Author: PropTypes.string.isRequired,
-  // id: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
