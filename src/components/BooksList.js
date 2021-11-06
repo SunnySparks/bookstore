@@ -15,31 +15,31 @@ const BooksList = (props) => {
     dispatch(removeBook(id));
   };
   return (
-    <div className="container row-wrapper border mt-3 p-3">
+    <div className="container row-wrapper border mt-3 p-3 bg-white">
       <div className="row">
-        <div className="col">
-          <h2 className="category">{category}</h2>
-          <h3 className="title">{title}</h3>
-          <span className="author">{Author}</span>
+        <div className="col pt-3">
+          <h2 className="category monB catego">{category}</h2>
+          <h3 className="title roBold ">{title}</h3>
+          <span className="roLite bookTitle">{Author}</span>
           <ul className="d-flex p-0 mt-3">
-            <li className="author  p-2">Comments</li>
-            <li className="author   border-start p-2">
-              <button type="button" onClick={() => removeBookFromStore(props.id)}>Remove</button>
+            <li className="p-2 roLite bookTitle">Comments</li>
+            <li className="border-start p-2">
+              <button className="roLite bookTitle noButton" type="button" onClick={() => removeBookFromStore(props.id)}>Remove</button>
             </li>
-            <li className="author  border-start p-2">Edit</li>
+            <li className="border-start p-2 roLite bookTitle">Edit</li>
           </ul>
         </div>
-        <div className="col d-flex border-end my-5">
+        <div className="col d-flex border-end my-4">
           <div className="rounded-circle Oval-2" />
           <div className="d-flex flex-column">
-            <span className="PercentComplete"> 64%</span>
-            <span className="Completed">Completed</span>
+            <span className="monR percent"> 64%</span>
+            <span className="monR completed">Completed</span>
           </div>
         </div>
-        <div className="col d-flex justify-content-center align-items-start flex-column m-5">
-          <span className="CurrentChapter">Current Chapter</span>
-          <span className="CurrentLesson">Chapter 17</span>
-          <button className="Rectangle-2 btn btn-primary" type="button">Update progress</button>
+        <div className="col d-flex justify-content-center align-items-start flex-column m-4 roLight">
+          <span className="completed">CURRENT CHAPTER</span>
+          <span className="chapter pb-3">Chapter 17</span>
+          <button className="progressButton btn btn-primary" type="button">UPDATE PROGRESS</button>
         </div>
       </div>
     </div>

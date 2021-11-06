@@ -32,13 +32,6 @@ const Book = () => {
     <div>
       <div>
         <div>
-          <h1>
-            Your book list
-          </h1>
-        </div>
-      </div>
-      <div>
-        <div>
           {BookItem}
         </div>
       </div>

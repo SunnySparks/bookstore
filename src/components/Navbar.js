@@ -16,10 +16,10 @@ const Navbar = () => (
                 <span className="blu monB titl">Bookstore CMS</span>
               </div>
               <div className="col-sm-2 monR linkNav align-padding">
-                <Link to="/">Book</Link>
+                <Link to="/">BOOKS</Link>
               </div>
               <div className="col-sm-2 monR linkNav align-padding">
-                <Link to="/categories">Categories</Link>
+                <Link to="/categories">CATEGORIES</Link>
               </div>
             </div>
           </div>

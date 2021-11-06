@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Slab:wght@300;700&display=swap');
 
 #root {
   background-color: #fafafa;
@@ -15,12 +15,21 @@ ul {
 .monB {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 1.875rem;
 }
 
 .monR {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
+}
+
+.roBold {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+}
+
+.roLight {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
 }
 
 .headr {
@@ -34,6 +43,7 @@ ul {
   width: 15rem;
   height: 2.313rem;
   margin: 0.375rem 2.938rem 0.125rem 0;
+  font-size: 1.875rem;
 }
 
 .linkNav {
@@ -65,4 +75,43 @@ ul {
   border: solid 3px;
   border-color: #e8e8e8;
   border-radius: 40px;
+}
+
+.row-wrapper {
+  border-radius: 5px;
+}
+
+.catego {
+  font-size: 0.900rem;
+  color: #888888;
+}
+
+.bookTitle {
+  font-size: 1.1rem;
+  color: #4386bf;
+}
+
+.noButton {
+  border: none;
+  background-color: white;
+}
+
+.percent {
+  font-size: 2rem;
+}
+
+.completed {
+  font-size: 1.1rem;
+}
+
+.chapter {
+  font-size: 1.3em;
+  letter-spacing: -0.4px;
+}
+
+.progressButton {
+  width: 15rem;
+  height: 2.525rem;
+  font-size: 0.813rem;
+  letter-spacing: 0.9px;
 }
