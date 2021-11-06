@@ -97,6 +97,11 @@ ul {
   background-color: white;
 }
 
+.progress-circle {
+  width: 70px!important;
+  height: 70px;
+}
+
 .percent {
   font-size: 2rem;
 }

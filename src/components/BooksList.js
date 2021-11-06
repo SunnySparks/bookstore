@@ -1,10 +1,14 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { removeBook } from '../redux/books/books';
 import '../App.css';
+
+const percentage = 64;
 
 const BooksList = (props) => {
   const dispatch = useDispatch();
@@ -29,11 +33,13 @@ const BooksList = (props) => {
             <li className="border-start p-2 roLite bookTitle">Edit</li>
           </ul>
         </div>
-        <div className="col d-flex border-end my-4">
-          <div className="rounded-circle Oval-2" />
-          <div className="d-flex flex-column">
-            <span className="monR percent"> 64%</span>
-            <span className="monR completed">Completed</span>
+        <div className="col border-end my-4">
+          <div className="d-flex flex-row">
+            <CircularProgressbar value={percentage} className="progress-circle" />
+            <span className="px-2">
+              <div className="monR percent"> 64%</div>
+              <div className="monR completed">Completed</div>
+            </span>
           </div>
         </div>
         <div className="col d-flex justify-content-center align-items-start flex-column m-4 roLight">
