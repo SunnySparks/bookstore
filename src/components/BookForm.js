@@ -1,3 +1,5 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
@@ -21,20 +23,20 @@ const BookForm = () => {
   };
   return (
     <div className="container rowForm-wrapper mt-3 mb-3">
-      <h3 className="formTitle">ADD NEW BOOK</h3>
+      <h3 className="formTitle monB">ADD NEW BOOK</h3>
       <form>
-        <div className="row">
-          <div className="col-12 m-2 col-lg-6">
+        <div className="row pb-5">
+          <div className="col-12 col-lg-5">
             <div className="input-group">
               <input type="text" name="title" onChange={onChange} className="placholder form-control" id="title" placeholder="Book title" />
             </div>
           </div>
-          <div className="col-12 m-2  col-lg-2">
+          <div className="col-12 col-lg-2">
             <div className="input-group">
               <input type="text" name="author" onChange={onChange} className="placholder form-control" id="Author" placeholder="Book Author" />
             </div>
           </div>
-          <div className="col-12 m-2  col-lg-2">
+          <div className="col-12 col-lg-2">
             <select className="placholder form-select" name="Category" onChange={onChange} id="Category">
               <option selected>Category</option>
               <option value="One">One</option>
@@ -42,7 +44,7 @@ const BookForm = () => {
               <option value="Three">Three</option>
             </select>
           </div>
-          <div className="col-12 m-2  col-lg-2">
+          <div className="col-12 col-lg-2">
             <button type="submit" onClick={submitBookToStore} className="RectangleSubmit btn btn-primary">Submit</button>
           </div>
         </div>
