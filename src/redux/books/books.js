@@ -1,25 +1,45 @@
-const ADD_BOOK = 'bookStore/books/ADD_BOOK';
-const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
-
-const initialState = [];
-export const addBook = (payload) => ({
-  type: ADD_BOOK,
-  payload,
-});
-export const removeBook = (payload) => ({
-  type: REMOVE_BOOK,
-  payload,
-});
-
-const reducer = (state = initialState, action) => {
+const GET_BOOKS_SUCCESS = 'bookStore/books/GET_BOOKS_SUCCESS';
+const apiID = 'yozOG7uq64vvExbwooD9';
+const API_URL = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${apiID}/books`;
+const initialState = {
+  books: [],
+};
+export const getBooks = () => (dispatch) => {
+  fetch(API_URL)
+    .then((res) => res.json())
+    .then((resResponse) => dispatch({
+      type: GET_BOOKS_SUCCESS,
+      payload: resResponse,
+    }));
+};
+export const addBook = (payload) => (dispatch) => {
+  fetch(API_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  })
+    .then(() => dispatch(getBooks()));
+};
+export const removeBook = (payload) => (dispatch) => {
+  fetch(`${API_URL}/${payload}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then(() => dispatch(getBooks()));
+};
+const booksReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_BOOK:
-      return [...state, action.payload];
-    case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.payload);
+    case GET_BOOKS_SUCCESS:
+      return {
+        ...state,
+        books: action.payload,
+      };
     default:
       return state;
   }
 };
-
-export default reducer;
+export default booksReducer;

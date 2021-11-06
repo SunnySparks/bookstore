@@ -1,26 +1,50 @@
 import '../App.css';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import BookForm from './BookForm';
-import BookList from './BookList';
+import BooksList from './BooksList';
+import { getBooks } from '../redux/books/books';
 
-const Book = () => (
-  <div>
+const Book = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getBooks());
+  }, []);
+
+  const BookItem = [];
+  const booklist = useSelector((data) => data.booksReducer.books);
+  Object.entries(booklist).forEach((element) => {
+    const [key, value] = element;
+    BookItem.push(value.map((item) => (
+      <BooksList
+        key={key}
+        title={item.title}
+        Author={item.title}
+        category={item.category}
+        id={key}
+      />
+    )));
+  });
+  return (
     <div>
       <div>
-        <h1>
-          Your book list
-        </h1>
+        <div>
+          <h1>
+            Your book list
+          </h1>
+        </div>
       </div>
-    </div>
-    <div>
       <div>
-        <BookList />
+        <div>
+          {BookItem}
+        </div>
+      </div>
+      <div>
+        <BookForm />
       </div>
     </div>
-    <div>
-      <BookForm />
-    </div>
-  </div>
-);
+  );
+};
 
 export default Book;
