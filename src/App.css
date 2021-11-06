@@ -2,6 +2,7 @@
 
 #root {
   background-color: #fafafa;
+  height: 100vh;
 }
 
 .blu {
@@ -114,4 +115,8 @@ ul {
   height: 2.525rem;
   font-size: 0.813rem;
   letter-spacing: 0.9px;
+}
+
+.formTitle{
+  color: #888888;
 }
