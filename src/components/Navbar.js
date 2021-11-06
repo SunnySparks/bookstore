@@ -35,6 +35,3 @@ const Navbar = () => (
 );
 
 export default Navbar;
-
-// <Link to="/">Book</Link>
-// <Link to="/categories">Categories</Link>
