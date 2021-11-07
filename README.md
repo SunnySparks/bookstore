@@ -4,6 +4,8 @@
 
 > A bookstore app made in React and Redux
 
+![screenshot](./bookstore.png)
+
 Use this app for saving your prefered books and reading progress
 
 ## Built With
